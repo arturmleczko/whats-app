@@ -1,13 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar'
+import { Button, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaProvider style={styles.container}>
+      <SafeAreaView>
+        <Text style={styles.label}>Hey everyone!</Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -17,4 +19,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+  label: {
+    color: 'black',
+    fontSize: 18,
+  },
+})
+
+export default App
